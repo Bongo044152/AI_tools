@@ -1,23 +1,31 @@
 import tools.SimpleTool as SimpleTool
 import tools.ExampleTool as ExampleTool
-toollist = {
+toollib = {
     "SimpleTool": SimpleTool,
     "ExampleTool": ExampleTool
 }
-val=2
-def searching(toolname,use):
-    if toolname in toollist:
-        toolclass=toollist[toolname]
-        func=getattr(toolclass,toolname)
-        print(f"輸入的字串：{use}")
-        text=func(use)
-        text.use()
+
+
+def searching(toolname:str):
+    if toolname in toollib:
+        return True
+    return False
+        
+        
+def using_tool(toolname:str,usename:str):
+    tooltext=toollib[toolname]
+    toolclass=getattr(tooltext,toolname)
+    func=toolclass(usename)
+    sentence=func.use()
+    return sentence
+
+
 def showtool():
     sentence=""
-    for i in toollist:
-        toolclass=toollist[i]
-        func=getattr(toolclass,i)
-        text=func("")
-        sentence=sentence+"\n"+text.show()
+    for i in toollib:
+        tooltext=toollib[i]
+        toolclass=getattr(tooltext,i)
+        func=toolclass("")
+        sentence=sentence+"\n"+func.show()
     return sentence
         
