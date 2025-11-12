@@ -32,6 +32,3 @@ class decorder():
         return self.show
 
     
-
-
-

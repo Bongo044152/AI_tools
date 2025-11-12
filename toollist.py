@@ -1,8 +1,8 @@
 import tools.SimpleTool as SimpleTool
 import tools.ExampleTool as ExampleTool
 toollib = {
-    "SimpleTool": SimpleTool,
-    "ExampleTool": ExampleTool
+    "SimpleTool": SimpleTool.SimpleTool,
+    "ExampleTool": ExampleTool.ExampleTool
 }
 
 
@@ -14,8 +14,7 @@ def searching(toolname:str):
         
 def using_tool(toolname:str,usename:str):
     tooltext=toollib[toolname]
-    toolclass=getattr(tooltext,toolname)
-    func=toolclass(usename)
+    func=tooltext(usename)
     sentence=func.use()
     return sentence
 
@@ -24,8 +23,7 @@ def showtool():
     sentence=""
     for i in toollib:
         tooltext=toollib[i]
-        toolclass=getattr(tooltext,i)
-        func=toolclass("")
+        func=tooltext("")
         sentence=sentence+"\n"+func.show()
     return sentence
         
