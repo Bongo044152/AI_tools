@@ -1,8 +1,10 @@
-class BaseToolModel():
+from abc import ABC, abstractmethod
+
+class BaseToolModel(ABC):
+    @abstractmethod
     def use(self):
-        print("自行使用")
-        return 0
+        pass
     
-    
+    @abstractmethod
     def show(self):
-        return "公版"
+        pass

@@ -5,8 +5,6 @@ class SimpleTool(BaseToolModel.BaseToolModel):
        
         
     def use(self):
-        print("使用的工具:SimpleTool")
-        print(self.ch)
         return self.ch
     
     

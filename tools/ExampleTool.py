@@ -5,8 +5,6 @@ class ExampleTool(BaseToolModel.BaseToolModel):
         
         
     def use(self):
-        print("使用的工具:ExampleTool")
-        print("y=ax+b")
         return "y=ax+b"
     
     

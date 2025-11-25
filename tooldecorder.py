@@ -1,5 +1,5 @@
 import toollist
-
+from loggers.logger import init_printer,printer
 class decorder():
     def __init__(self,sentence):
         self.show="接下來回列出所有你可以使用的工具，使用的方法格是為<工具名稱>你使用的東西<工具名稱>，你可以使用的工具有:"
@@ -32,6 +32,4 @@ class decorder():
         return self.show
 
     
-
-
 
